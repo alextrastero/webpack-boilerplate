@@ -21,15 +21,8 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loader: ['react-hot', 'babel-loader'],
-        exclude: /node_modules/,
-        query: {
-          babelrc: false,
-          presets: [
-            'react',
-            'es2015',
-            'stage-0']
-        }
+        loaders: ['react-hot', 'babel-loader'],
+        include: path.join(__dirname, 'src')
       }
     ]
   },
