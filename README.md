@@ -1,6 +1,9 @@
-Get started
-===========
+#Webpack/ES6 Playground
 
-Install:
+###Installation
 
-    npm i && npm start && open http://localhost:8080/
+```
+npm i && npm start
+```
+
+Navigate to http://localhost:8080
