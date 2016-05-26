@@ -1,9 +1,6 @@
 Get started
 ===========
 
-run the example with:
+Install:
 
-    npm install
-    npm run start
-
-open http://localhost:8080/
+    npm i && npm start && open http://localhost:8080/
