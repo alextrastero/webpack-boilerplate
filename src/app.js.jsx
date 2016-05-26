@@ -6,7 +6,7 @@ class App extends Component {
 
     return (
       <div>
-        {`Hey, ho ${name}!`}
+        {`Hey ${name}!`}
       </div>
     );
   }
