@@ -6,9 +6,9 @@
 npm install && npm start && open http://localhost:8080
 ```
 
-Now you can start writing wicked spells, ie:
+Now you can start writing stuff like:
 
-```
+```javascript
 import React, { PropTypes } from 'react'
 
 const App = ({ name }) =>
