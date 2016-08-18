@@ -1,19 +1,14 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import * as RM from './react-materialize';
 
 class App extends Component {
-  render() {
-    const { name } = this.props;
-
+  render () {
     return (
       <div>
-        {`Hey ${name}!`}
+        <RM.Button large>Works</RM.Button>
       </div>
     );
   }
 }
-
-App.propTypes = {
-  name: PropTypes.string
-};
 
 export default App;
