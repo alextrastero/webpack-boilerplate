@@ -5,10 +5,9 @@
   "main": "index",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
-    "lint": "eslint src/* || true",
+    "pretest": "eslint src",
     "update": "./update.sh",
-    "build": "webpack --colors --progress",
-    "start": "webpack-dev-server --progress --colors --hot"
+    "start": "node server.js"
   },
   "author": "Alexander Odell <alextrastero@gmail.com> (http://github.com/alextrastero)",
   "license": "ISC",
@@ -43,10 +42,6 @@
     "webpack-dev-server": "^1.12.1"
   },
   "babel": {
-    "presets": [
-      "es2015",
-      "stage-0",
-      "react"
-    ]
+    "presets": [ "es2015", "stage-0", "react" ]
   }
 }

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import * as RM from './react-materialize';
 
 class App extends Component {
   render () {
     return (
       <div>
-        <RM.Button large>Works</RM.Button>
+        <p>Yet another Webpack Boilerplate 👀</p>
       </div>
     );
   }

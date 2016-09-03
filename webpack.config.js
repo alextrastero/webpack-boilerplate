@@ -4,26 +4,23 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'eval',
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
+    'webpack-dev-server/client?http://0.0.0.0:3000', // WebpackDevServer host and port
     'webpack/hot/only-dev-server',
     './src/index'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
-    publicPath: '/assets',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/assets/'
   },
-  debug: true,
-  resolve: {
-    extensions: ['', '.js', '.jsx', '.js.jsx']
-  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
   module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        loaders: ['react-hot', 'babel-loader'],
-        include: path.join(__dirname, 'src')
-      }
-    ]
+    loaders: [{
+      test: /\.js$/,
+      loaders: ['react-hot', 'babel'],
+      include: path.join(__dirname, 'src')
+    }]
   }
 };
