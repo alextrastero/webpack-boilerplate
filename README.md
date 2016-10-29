@@ -5,6 +5,6 @@
 
 ### Getting started
  - `yarn`
- - `yarn run start`
+ - `yarn start`
 
 Now go to localhost:3000 and you should see a Hello World! message
