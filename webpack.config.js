@@ -1,26 +1,24 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const babel = require('@webpack-blocks/babel6');
+const { addPlugins, createConfig, entryPoint, env, setOutput, sourceMaps, webpack } = require('@webpack-blocks/webpack')
+const devServer = require('@webpack-blocks/dev-server')
 
-module.exports = {
-  devtool: 'eval',
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    './src/index'
-  ],
-  output: {
+module.exports = createConfig([
+  entryPoint('./src/index'),
+  setOutput({
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
-  module: {
-    loaders: [{
-      test: /\.js$/,
-      loader: 'babel',
-      include: path.join(__dirname, 'src')
-    }]
-  }
-};
+    publicPath: '/dist/'
+  }),
+  addPlugins([
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env || 'development')
+    })
+  ]),
+  babel(),
+  env('development', [
+    devServer(),
+    sourceMaps(),
+    devServer.reactHot(),
+  ])
+]);
