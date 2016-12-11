@@ -1,8 +1,11 @@
-## Webpack Boilerplate [new]
+## Webpack Boilerplate
+### Includes:
+ - @webpack-blocks
+ - postcss-cssnext
+ - stage-0 es6
+ - react hot
 
-### Getting started
+### Usage
 ```sh
-npm install
-&& npm start
-&& open http://localhost:3000
+npm i && npm start
 ```
