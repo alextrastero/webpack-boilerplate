@@ -1,5 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import add from './add';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+add(2,3);
