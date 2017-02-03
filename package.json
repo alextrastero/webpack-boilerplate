@@ -2,7 +2,7 @@
   "name": "webpack-boilerplate",
   "scripts": {
     "build": "NODE_ENV=production webpack --config webpack.config.js",
-    "start": "NODE_ENV=development webpack-dev-server --config webpack.config.js"
+    "start": "NODE_ENV=development webpack --config webpack.config.js"
   },
   "version": "1.0.0",
   "description": "Webpack boilerplate | React Redux Immutablejs Jest",
@@ -10,10 +10,10 @@
   "author": "Alexander Odell <alextrastero@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@webpack-blocks/babel6": "^0.1.1",
-    "@webpack-blocks/dev-server": "^0.1.0",
-    "@webpack-blocks/postcss": "^0.2.0",
-    "@webpack-blocks/webpack": "^0.1.5",
+    "@webpack-blocks/babel6": "^0.4.0",
+    "@webpack-blocks/dev-server2": "^0.4.0",
+    "@webpack-blocks/postcss": "^0.4.0",
+    "@webpack-blocks/webpack2": "^0.4.0",
     "babel-core": "^6.18.0",
     "babel-loader": "^6.2.7",
     "babel-preset-es2015": "^6.18.0",
@@ -21,8 +21,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "postcss-cssnext": "^2.9.0",
     "react-hot-loader": "^1.3.1",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
+    "webpack": "^2.2.1"
   },
   "dependencies": {
     "react": "^15.3.2",
