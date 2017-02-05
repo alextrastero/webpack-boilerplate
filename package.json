@@ -2,15 +2,26 @@
   "name": "webpack-boilerplate",
   "scripts": {
     "build": "NODE_ENV=production webpack",
-    "start": "NODE_ENV=development webpack-dev-server"
+    "start": "NODE_ENV=development webpack-dev-server",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "version": "1.0.0",
   "description": "Webpack boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alextrastero/webpack-boilerplate.git"
+  },
   "main": "index.js",
   "author": "Alexander Odell <alextrastero@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-  },
-  "dependencies": {
+    "babel-jest": "^18.0.0",
+    "babel-loader": "^6.2.10",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
   }
 }

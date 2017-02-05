@@ -1,32 +1,34 @@
-const { addPlugins, createConfig, entryPoint, env, setOutput, sourceMaps, webpack } = require('@webpack-blocks/webpack')
-const babel = require('@webpack-blocks/babel6')
-const postcss = require('@webpack-blocks/postcss')
-const devServer = require('@webpack-blocks/dev-server')
-const cssnext = require("postcss-cssnext")
+const { resolve } = require('path')
+const webpack = require('webpack')
 
-const path = require('path')
-
-module.exports = createConfig([
-  entryPoint('./src'),
-  setOutput({
-    path: path.join(__dirname, 'dist'),
+module.exports = {
+  entry: [
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
+    './index.js'
+  ],
+  output: {
     filename: 'bundle.js',
-    publicPath: '/dist/'
-  }),
-  addPlugins([
-    new webpack.DefinePlugin({
-      'process.env': JSON.stringify(process.env || 'development')
-    })
-  ]),
-  babel(),
-  postcss([
-    cssnext()
-  ]),
-  env('development', [
-    devServer({
-      port: 3000
-    }),
-    sourceMaps(),
-    devServer.reactHot(),
-  ]),
-])
+    path: resolve(__dirname, 'dist'),
+    publicPath: '/'
+  },
+  context: resolve(__dirname, 'src'),
+  devtool: 'inline-source-map',
+  devServer: {
+    hot: true,
+    contentBase: resolve(__dirname, 'dist'),
+    publicPath: '/'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: [ 'babel-loader' ],
+        exclude: /node_modules/
+      }
+    ]
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
+}

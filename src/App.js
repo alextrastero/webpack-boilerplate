@@ -1,12 +1,3 @@
-import React, { Component } from 'react';
-import './App.css';
-
-export default class App extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Hola Mundo</h1>
-      </div>
-    );
-  }
+export default function App () {
+  console.log('%c This is the App! ', 'font-size: 20px; background: #222; color: #bada55')
 }

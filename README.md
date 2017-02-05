@@ -1,11 +1,24 @@
 ## Webpack Boilerplate
 ### Includes:
- - @webpack-blocks
- - postcss-cssnext
- - stage-0 es6
- - react hot
+ - stage-2 es6
+ - jest testing
 
-### Usage
+### Install
 ```sh
-npm i && npm start
+npm i
+```
+
+### Run
+```sh
+npm start
+```
+
+### Test
+```sh
+npm t
+```
+
+### Watch
+```sh
+npm run test:watch
 ```
