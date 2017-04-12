@@ -1,5 +1,12 @@
 const { resolve } = require('path')
 const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const PATHS = {
+  dist: resolve(__dirname, 'dist'),
+  src: resolve(__dirname, 'src'),
+  public: resolve(__dirname, '/')
+}
 
 module.exports = {
   entry: [
@@ -8,27 +15,28 @@ module.exports = {
     './index.js'
   ],
   output: {
-    filename: 'bundle.js',
-    path: resolve(__dirname, 'dist'),
-    publicPath: '/'
+    filename: '[name].js',
+    path: PATHS.dist,
+    publicPath: PATHS.public,
   },
-  context: resolve(__dirname, 'src'),
-  devtool: 'inline-source-map',
+  context: PATHS.src,
+  devtool: 'inline',
   devServer: {
     hot: true,
-    contentBase: resolve(__dirname, 'dist'),
-    publicPath: '/'
+    contentBase: PATHS.dist,
+    publicPath: PATHS.public
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: [ 'babel-loader' ],
+        use: 'babel-loader',
         exclude: /node_modules/
       }
     ]
   },
   plugins: [
+    new HtmlWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]
 }

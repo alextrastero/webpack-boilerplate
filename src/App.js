@@ -1,3 +1,4 @@
 export default () => {
-  console.log(`%cThis is the\nApp!`, 'color: #BADA55')
+  const body = document.body
+  body.innerHTML = 'This is the App!'
 }
